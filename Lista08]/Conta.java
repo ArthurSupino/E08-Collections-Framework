@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.Scanner;
 
 abstract class Conta implements ITaxas {
-
+    
+    Scanner sc = new Scanner(System.in);
     private int numero;
 
     protected Cliente dono;
@@ -65,9 +66,10 @@ abstract class Conta implements ITaxas {
     }
     public void impressao_extratosMAIN()
     {
-        
-        
-        imprimirExtrato(this.numero_operacao);
+        int numero;
+        System.out.println("digite a forma de ordenacao [1] - Por deposito [-1] - por saque [0] - Em ordem");
+        numero = sc.nextInt();
+        imprimirExtrato(numero);
     }
     public boolean sacar(double valor) {
         if (valor >= 0 && valor <= this.limite) {
@@ -122,7 +124,12 @@ abstract class Conta implements ITaxas {
         System.out.println("====================");
 
         System.out.println("Extrato ordenado: ");
-   
+        Collections.sort(operacoes);
+        for(Operacao atual : this.operacoes)
+        {
+            System.out.println(atual);
+        }
+        
     }
 
     public int getNumero() {

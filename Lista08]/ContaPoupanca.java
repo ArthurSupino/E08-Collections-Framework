@@ -21,4 +21,8 @@ public class ContaPoupanca extends Conta  {
       double  taxa_cobrada = 0;
       return taxa_cobrada;
     }
+
+    public int compareTo(Object o) {
+        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    }
 }

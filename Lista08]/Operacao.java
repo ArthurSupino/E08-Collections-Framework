@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Classe responsável por registrar operações de saque e depósitos realizados em contas correntes.
  */
-abstract class Operacao implements ITaxas {
+abstract class Operacao implements ITaxas , Comparable<Operacao> {
 
     /* Data de realização da operação */
     private Date data;
@@ -75,5 +75,20 @@ abstract class Operacao implements ITaxas {
     public void setValor(double valor) {
         this.valor = valor;
     }
-   
+    public int compareTo(Operacao operacoes)
+    {
+        if(this.tipo != operacoes.tipo && this.tipo == 'd' )
+        {
+            return -1;
+        }
+        else if(this.tipo != operacoes.tipo && this.tipo == 's')
+        {
+            return 1;
+        }
+        else
+        {
+           return 0; 
+        }
+        
+    }
 }

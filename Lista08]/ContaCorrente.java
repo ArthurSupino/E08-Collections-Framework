@@ -34,5 +34,8 @@ public class ContaCorrente extends Conta {
             
        
        
+    }
+    public int compareTo(Object o) {
+        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
     }   
 }

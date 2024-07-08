@@ -1,6 +1,8 @@
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
+    public Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 
         Cliente joao = new PessoaFisica("João", "Av. Antonio Carlos, 6627",
@@ -22,14 +24,13 @@ public class Main {
         Conta fantasma = new ContaCorrente(12121, lojinha, 10000,200);
         
 
-        conta1.depositar(3000);
-        conta1.depositar(2000);
-        conta1.sacar(500);
-        fantasma.sacar(100);
-        fantasma.sacar(100);
+        conta1.sacar(100);
+        conta1.depositar(100);
+        conta1.sacar(200);
+        conta1.depositar(200);
+        conta1.sacar(150);
+        conta1.depositar(160);
         
-        conta2.transferir(conta1, 666);
-        conta2.depositar(234);
         conta1.imprimirExtratoTaxas();
         fantasma.imprimirExtratoTaxas();
         //implementacao do equals
